@@ -1,104 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brittnay Sherrick | Epic Fantasy Author</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #0f172a;
-            color: white;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        header {
-            padding: 6rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg,#0f172a,#1e293b);
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            color: #67e8f9;
-        }
-
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 4rem 2rem;
-        }
-
-        .card {
-            background: #1e293b;
-            padding: 2rem;
-            border-radius: 16px;
-            margin-top: 2rem;
-        }
-
-        h2 {
-            margin-bottom: 1rem;
-            color: #67e8f9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem;
-            color: #94a3b8;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            margin-top: 20px;
-            background: #06b6d4;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Brittnay Sherrick, epic fantasy author of Shards of Starlight.">
+<title>Brittnay Sherrick | Epic Fantasy Author</title>
+<style>
+:root{--night:#030918;--panel:#071127;--gold:#e5b660;--cream:#f7ebd1;--violet:#7466c8;--line:rgba(229,182,96,.34)}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--night);color:#fff;font-family:Arial,sans-serif;line-height:1.55}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 72% 12%,rgba(92,83,199,.34),transparent 28%),radial-gradient(circle at 12% 37%,rgba(190,95,170,.17),transparent 22%),linear-gradient(135deg,#020714,#07122b 55%,#020713)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.5;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:58px 58px}
+a{color:inherit}.wrap{width:min(1180px,92%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}.brand{font:600 24px Georgia,serif;letter-spacing:3px;color:var(--cream)}.brand span{color:var(--gold)}.menu{display:flex;gap:28px}.menu a{text-decoration:none;text-transform:uppercase;font-size:13px;letter-spacing:1.5px}.menu a:hover{color:var(--gold)}
+.hero{min-height:650px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px;padding:55px 0 85px}.eyebrow,.label{color:var(--gold);text-transform:uppercase;letter-spacing:5px;font-size:13px}.hero h1{font:500 clamp(54px,7vw,102px)/.9 Georgia,serif;letter-spacing:7px;color:var(--cream);margin:20px 0}.hero h2{font:400 18px Georgia,serif;letter-spacing:2px}.hero p{max-width:660px;color:#e6e8f0;font-size:18px}.actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;border:1px solid var(--gold);padding:14px 23px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;font-size:13px}.btn.primary{background:linear-gradient(90deg,#c9963f,#f1cf86);color:#10111b}.crystal{width:min(390px,80vw);aspect-ratio:.58;margin:auto;clip-path:polygon(50% 0,82% 25%,68% 78%,50% 100%,26% 76%,17% 29%);background:linear-gradient(125deg,#ced9ff 0 10%,#7269de 30%,#f3c979 55%,#6d52bf 73%,#dff5ff);filter:drop-shadow(0 0 35px #776ddd);position:relative}.crystal:after{content:"";position:absolute;inset:7%;clip-path:inherit;background:linear-gradient(140deg,rgba(3,9,24,.8),rgba(255,255,255,.35),rgba(40,18,90,.8))}
+.grid2{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.section{padding:62px}.section+ .section{border-left:1px solid var(--line)}h3{font:400 34px Georgia,serif;color:var(--cream);margin:8px 0 24px}.book-layout{display:grid;grid-template-columns:180px 1fr;gap:35px}.book-cover{height:270px;border:1px solid var(--gold);display:grid;place-items:center;text-align:center;padding:20px;background:radial-gradient(circle at 50% 45%,#5545a6,#071127 58%);box-shadow:0 15px 45px #000}.book-cover strong{font:400 28px Georgia,serif;letter-spacing:3px}.quote{color:#f1c46d;font:italic 19px Georgia,serif}.progress{margin:23px 0}.progress-head{display:flex;justify-content:space-between;font-size:13px;text-transform:uppercase;letter-spacing:1px}.bar{height:10px;border:1px solid #27304b;border-radius:10px;margin-top:9px;overflow:hidden}.fill{height:100%;width:var(--p);background:linear-gradient(90deg,#c4923d,#f1cf86);border-radius:10px}
+.bottom{display:grid;grid-template-columns:.9fr 1.1fr;border-bottom:1px solid var(--line)}.newsletter{padding:65px}.signup{display:flex;margin-top:25px}.signup input{flex:1;min-width:0;background:#060d1e;border:1px solid #303956;color:#fff;padding:15px}.signup button{border:0;background:var(--gold);padding:0 23px;text-transform:uppercase;cursor:pointer}.meet{min-height:430px;padding:55px;display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:center;border-left:1px solid var(--line)}.portrait{min-height:330px;border:1px solid var(--gold);border-radius:180px 180px 24px 24px;background:#121a31 center/cover no-repeat;box-shadow:0 0 50px rgba(116,102,200,.35);position:relative}.portrait:empty:after{content:"Add your portrait: images/author-photo.jpg";position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:28px;color:#d8c9aa;font-size:13px;background:linear-gradient(transparent,rgba(3,9,24,.86))}.portrait.has-photo:empty:after{display:none}.footer{padding:28px 0;display:flex;justify-content:space-between;color:#aab0c3;font-size:13px}
+@media(max-width:850px){.menu{display:none}.hero,.grid2,.bottom,.meet{grid-template-columns:1fr}.hero{text-align:center}.hero p{margin-inline:auto}.actions{justify-content:center}.crystal{width:230px}.section+.section,.meet{border-left:0;border-top:1px solid var(--line)}.section,.newsletter,.meet{padding:42px 24px}.book-layout{grid-template-columns:1fr}.book-cover{width:190px}.footer{flex-direction:column;gap:8px}}
+</style>
 </head>
-
 <body>
-
-<header>
-    <h1>Brittnay Sherrick</h1>
-    <p class="tagline">
-        Epic Fantasy. Unforgettable Worlds. Endless Adventure.
-    </p>
-</header>
-
-<section>
-    <div class="card">
-        <h2>Featured Book</h2>
-        <h3>Shards of Starlight</h3>
-
-        <p>
-            An epic fantasy tale of magic, destiny, and worlds waiting
-            to be discovered.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>About the Author</h2>
-
-        <p>
-            Brittnay Sherrick writes fantasy stories filled with adventure,
-            wonder, and unforgettable characters.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Stay 
+<header class="wrap nav"><div class="brand"><span>◇</span> BRITTNAY SHERRICK</div><nav class="menu"><a href="#home">Home</a><a href="#books">Books</a><a href="#journey">The Journey</a><a href="#newsletter">Newsletter</a><a href="#about">About</a></nav></header>
+<main>
+<section class="wrap hero" id="home"><div><div class="eyebrow">Epic Fantasy Author</div><h1>BRITTNAY<br>SHERRICK</h1><h2>EPIC FANTASY. UNFORGETTABLE WORLDS. ENDLESS ADVENTURE.</h2><p>Stories of friendship, destiny, wonder, and the courage to do what is right when the world chooses otherwise.</p><div class="actions"><a class="btn primary" href="#books">Explore the Books</a><a class="btn" href="#newsletter">Join the Starlight Society</a></div></div><div class="crystal" aria-label="Crystal shard brand motif"></div></section>
+<section class="grid2" id="books"><article class="section"><div class="label">Featured Book</div><div class="book-layout"><div class="book-cover"><strong>SHARDS<br>OF<br>STARLIGHT</strong></div><div><h3>Shards of Starlight</h3><p class="quote">The Starlight has left the land and chosen you instead...</p><p>You will not survive it.</p><a class="btn" href="#">Learn more</a></div></div></article><article class="section" id="journey"><div class="label">The Journey Continues</div><h3>Current Projects</h3><div class="progress"><div class="progress-head"><span>Shards of Starlight</span><span>65%</span></div><div class="bar"><div class="fill" style="--p:65%"></div></div></div><div class="progress"><div class="progress-head"><span>Untitled Project</span><span>28%</span></div><div class="bar"><div class="fill" style="--p:28%"></div></div></div><div class="progress"><div class="progress-head"><span>Future Project</span><span>15%</span></div><div class="bar"><div class="fill" style="--p:15%"></div></div></div></article></section>
+<section class="bottom"><article class="newsletter" id="newsletter"><div class="label">Join the</div><h3>Starlight Society</h3><p>Be the first to receive book updates, exclusive content, early reveals, and behind-the-scenes stories.</p><form class="signup" onsubmit="event.preventDefault(); alert('Connect this form to Kit when ready.');"><input type="email" required placeholder="Enter your email address" aria-label="Email address"><button>Join</button></form></article><article class="meet" id="about"><div><div class="label">Meet Brittnay</div><h3>Writer. Dreamer. Believer.</h3><p>Believer in the power of stories to light the way forward.</p><a class="btn" href="#">Read my story</a></div><div class="portrait" id="authorPortrait" role="img" aria-label="Portrait of the author"></div></article></section>
+</main>
+<footer class="wrap footer"><span>◇ Brittnay Sherrick</span><span>© 2026 Brittnay Sherrick. All rights reserved.</span></footer>
+<script>
+// The portrait uses an image file you upload to the repository.
+const portrait = document.getElementById('authorPortrait');
+const authorPhoto = 'images/author-photo.jpg';
+const test = new Image();
+test.onload = () => { portrait.style.backgroundImage = `url('${authorPhoto}')`; portrait.classList.add('has-photo'); };
+test.src = authorPhoto;
+</script>
+</body></html>
