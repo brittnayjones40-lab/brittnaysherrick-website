@@ -1,0 +1,1 @@
+Website image assets will go in this folder.
