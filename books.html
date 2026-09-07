@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the Shards of Starlight fantasy book series by Brittnay Sherrick.">
+  <title>Books | Brittnay Sherrick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #292138;
+      --ink-soft: #4c4358;
+      --gold: #b18445;
+      --gold-light: #d7b881;
+      --paper: #fbfaf8;
+      --line: #e7e0d9;
+      --display: "Cinzel", Georgia, serif;
+      --body: "Cormorant Garamond", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--body);
+      font-size: 17px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      width: min(1030px, calc(100% - 72px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      background: rgba(251, 250, 248, .96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .wordmark {
+      color: var(--ink);
+      font: 500 18px var(--display);
+      letter-spacing: .18em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .wordmark i {
+      color: var(--gold);
+      margin-right: 10px;
+      font-style: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-evenly;
+      height: 100%;
+      flex: 1;
+    }
+
+    .nav-links a {
+      display: grid;
+      place-items: center;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      font: 500 11px/1 var(--display);
+      letter-spacing: .1em;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--gold);
+    }
+
+    .nav-links a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border: 1px solid var(--gold);
+      background: var(--paper);
+      transform: translate(-50%, 50%) rotate(45deg);
+    }
+
+    .intro {
+      overflow: hidden;
+      padding: 34px 0 22px;
+      background: linear-gradient(105deg, #fffdfb 0%, #fbfaf8 58%, #f1edee 100%);
+    }
+
+    .intro-inner {
+      position: relative;
+      min-height: 112px;
+    }
+
+    .intro-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 12px;
+      font: 500 clamp(42px, 6vw, 66px)/1 var(--display);
+      letter-spacing: .03em;
+    }
+
+    .rule {
+      width: 165px;
+      height: 1px;
+      margin: 0 0 15px;
+      background: var(--gold);
+      position: relative;
+    }
+
+    .rule::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -4px;
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .intro p {
+      max-width: 350px;
+      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .intro-crystal {
+      position: absolute;
+      right: 10%;
+      top: -12px;
+      width: 240px;
+      height: 170px;
+      object-fit: contain;
+      object-position: center;
+      opacity: .84;
+      filter: drop-shadow(0 10px 20px rgba(166, 127, 66, .13));
+    }
+
+    .featured {
+      position: relative;
+      margin: 0 auto 10px;
+      padding: 14px 30px;
+      display: grid;
+      grid-template-columns: 190px 1fr 85px;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .7);
+      box-shadow: 0 5px 20px rgba(53, 42, 55, .06);
+    }
+
+    .featured-number {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--gold);
+      transform: translateY(-50%);
+      font: 500 20px var(--display);
+    }
+
+    .book-cover {
+      width: 145px;
+      height: 178px;
+      margin: 0 auto;
+      position: relative;
+      transform: translateX(14px);
+      background: linear-gradient(92deg, #dddcd8, #faf9f5 16%, #eeece8 90%);
+      box-shadow: 5px 6px 9px rgba(55, 42, 36, .18);
+    }
+
+    .book-cover::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      background: linear-gradient(90deg, #aaa9a5, #f1efeb 60%, #d3d0c9);
+    }
+
+    .book-cover::after {
+      content: "◇";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 34px;
+    }
+
+    .label {
+      color: var(--gold);
+      text-transform: uppercase;
+      font: 500 10px/1.2 var(--display);
+      letter-spacing: .12em;
+    }
+
+    .featured h2 {
+      margin: 8px 0 7px;
+      font: 500 clamp(24px, 3vw, 31px)/1.05 var(--display);
+      letter-spacing: .02em;
+    }
+
+    .series {
+      margin-bottom: 9px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font: 500 11px var(--display);
+      letter-spacing: .06em;
+    }
+
+    .quote {
+      margin-bottom: 8px;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .description {
+      max-width: 430px;
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .status {
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font: 500 10px var(--display);
+      letter-spacing: .08em;
+    }
+
+    .status::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 17px;
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      font: 500 10px var(--display);
+      letter-spacing: .08em;
+    }
+
+    .button.primary {
+      color: #fff;
+      background: var(--ink);
+    }
+
+    .button.secondary {
+      color: var(--gold);
+    }
+
+    .button:hover {
+      filter: brightness(1.15);
+    }
+
+    .sigil {
+      width: 112px;
+      aspect-ratio: 1;
+      opacity: .66;
+      background: repeating-radial-gradient(circle, transparent 0 21px, rgba(177, 132, 69, .65) 22px 23px, transparent 24px 30px);
+      clip-path: polygon(50% 0, 58% 38%, 100% 50%, 58% 62%, 50% 100%, 42% 62%, 0 50%, 42% 38%);
+    }
+
+    .books {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      padding-bottom: 12px;
+      position: relative;
+    }
+
+    .book-row {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) 245px;
+      grid-template-rows: 108px;
+      gap: 0;
+      min-height: 108px;
+      align-items: stretch;
+    }
+
+    .number {
+      display: grid;
+      place-items: center;
+      position: relative;
+      color: var(--gold);
+      font: 500 20px var(--display);
+    }
+
+    .number::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      border-left: 1px solid var(--gold-light);
+      z-index: -1;
+    }
+
+    .number span {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold-light);
+      border-radius: 50%;
+      background: var(--paper);
+    }
+
+    .row-info {
+      padding: 9px 18px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .row-info h3 {
+      margin-bottom: 3px;
+      font: 500 17px/1.2 var(--display);
+      letter-spacing: .04em;
+    }
+
+    .row-info .series {
+      margin-bottom: 9px;
+      font-size: 10px;
+    }
+
+    .row-info p {
+      max-width: none;
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .row-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      color: var(--gold);
+      font: 500 10px var(--display);
+      white-space: nowrap;
+    }
+
+    .row-meta .sigil {
+      width: 48px;
+      flex: none;
+    }
+
+    .newsletter {
+      margin: 0 auto 10px;
+      padding: 14px 30px;
+      display: grid;
+      grid-template-columns: 100px 1fr 290px;
+      gap: 18px;
+      align-items: center;
+      min-height: 86px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(110deg, #f4eff0, #fffdfb 60%);
+    }
+
+    .newsletter-crystal {
+      width: 85px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .newsletter h2 {
+      margin: 0 0 6px;
+      font: 500 20px var(--display);
+      letter-spacing: .03em;
+    }
+
+    .newsletter p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .signup {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .signup input {
+      flex: 1 1 145px;
+      min-width: 0;
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font: 15px var(--body);
+    }
+
+    .signup button {
+      flex: 1 0 180px;
+      padding: 10px 13px;
+      border: 1px solid var(--ink);
+      color: #fff;
+      background: var(--ink);
+      text-transform: uppercase;
+      font: 500 10px var(--display);
+      letter-spacing: .08em;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 14px 0 17px;
+      font: 12px var(--body);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      text-transform: uppercase;
+      font: 500 10px var(--display);
+      letter-spacing: .06em;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .shell {
+        width: min(100% - 34px, 620px);
+      }
+
+      .nav {
+        height: 66px;
+        gap: 20px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+
+      .intro {
+        padding-top: 28px;
+      }
+
+      .intro-crystal {
+        right: -25px;
+        opacity: .55;
+      }
+
+      .featured {
+        grid-template-columns: 135px 1fr;
+        gap: 22px;
+        padding: 18px;
+      }
+
+      .book-cover {
+        width: 105px;
+        height: 145px;
+      }
+
+      .featured .sigil {
+        display: none;
+      }
+
+      .book-row {
+        grid-template-columns: 40px minmax(0, 1fr);
+      }
+
+      .row-meta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links {
+        justify-content: flex-end;
+      }
+
+      .nav-links a:nth-child(n+3) {
+        display: none;
+      }
+
+      .intro-inner {
+        min-height: 155px;
+      }
+
+      .intro-crystal {
+        width: 220px;
+        right: -35px;
+        top: 20px;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .book-cover {
+        margin: 0 auto;
+        transform: none;
+      }
+
+      .description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .book-row {
+        grid-template-columns: 37px 1fr;
+        grid-template-rows: auto;
+        min-height: 0;
+        margin-bottom: 12px;
+      }
+
+      .number {
+        align-items: start;
+        padding-top: 34px;
+      }
+
+      .row-info {
+        grid-column: 2;
+        border-top: 0;
+        padding: 12px 3px 10px;
+      }
+
+      .row-info p {
+        white-space: normal;
+      }
+
+      .newsletter {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+      }
+
+      .newsletter-crystal {
+        margin: auto;
+      }
+
+      .signup {
+        justify-content: center;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="wordmark" href="index.html" aria-label="Brittnay Sherrick home"><i>◇</i>BRITTNAY SHERRICK</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="#books" aria-current="page">Books</a><a
+          href="#newsletter">Newsletter</a><a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="intro">
+      <div class="shell intro-inner">
+        <div class="intro-copy">
+          <h1>Books</h1>
+          <div class="rule"></div>
+          <p>Five Terranes connected by starlight, destiny,<br>and the courage to choose what is right.</p>
+        </div><img class="intro-crystal" src="images/hero-crystal.png" alt="A glowing starlight crystal">
+      </div>
+    </section>
+    <section class="shell" id="books">
+      <article class="featured">
+        <div class="featured-number" aria-label="Book One">I</div>
+        <div class="book-cover" role="img" aria-label="Fractured Light cover placeholder"></div>
+        <div>
+          <div class="label">Featured Book</div>
+          <h2>Fractured Light</h2>
+          <div class="series">Book One of the Shards of Starlight</div>
+          <p class="quote">“The Starlight has left the land and chosen you instead...”</p>
+          <p class="description">A story of fractured magic, unbreakable friendship, and impossible choices—where one
+            spark of courage could save the Terranes... or end their magic forever.</p>
+          <div class="status">In progress</div>
+          <div class="actions"><a class="button primary" href="#saga">Explore Fractured Light</a><a
+              class="button secondary" href="#newsletter">Join for release updates</a></div>
+        </div>
+        <div class="sigil" aria-hidden="true"></div>
+      </article>
+      <div class="books" id="saga" aria-label="The Shards of Starlight books">
+        <article class="book-row">
+          <div class="number"><span>II</span></div>
+          <div class="row-info">
+            <h3>Light in the Dark</h3>
+            <div class="series">Book Two</div>
+            <p>In the shadowed realm of Vespera, secrets rise, loyalties bend, and the truth is never what it seems.</p>
+          </div>
+          <div class="row-meta">
+            <div class="sigil"></div><span>Planned</span>
+          </div>
+        </article>
+        <article class="book-row">
+          <div class="number"><span>III</span></div>
+          <div class="row-info">
+            <h3>Untitled</h3>
+            <div class="series">Book Three</div>
+            <p>In Maris, devotion is a drowning; fear is the scripture they never stop reciting.</p>
+          </div>
+          <div class="row-meta">
+            <div class="sigil"></div><span>Title and details to be revealed</span>
+          </div>
+        </article>
+        <article class="book-row">
+          <div class="number"><span>IV</span></div>
+          <div class="row-info">
+            <h3>Untitled</h3>
+            <div class="series">Book Four</div>
+            <p>Justice is paid in fire and blood.</p>
+          </div>
+          <div class="row-meta">
+            <div class="sigil"></div><span>Title and details to be revealed</span>
+          </div>
+        </article>
+        <article class="book-row">
+          <div class="number"><span>V</span></div>
+          <div class="row-info">
+            <h3>Untitled</h3>
+            <div class="series">Book Five</div>
+            <p>The final destination remains hidden.</p>
+          </div>
+          <div class="row-meta">
+            <div class="sigil"></div><span>Title and details to be revealed</span>
+          </div>
+        </article>
+      </div>
+      <section class="newsletter" id="newsletter"><img class="newsletter-crystal" src="images/hero-crystal.png"
+          alt="Small starlight crystal">
+        <div>
+          <h2>Join the Starlight Society</h2>
+          <p>Be the first to receive book updates, exclusive content, and glimpses behind the journey as new worlds take
+            shape.</p>
+        </div>
+        <form class="signup" onsubmit="event.preventDefault(); alert('Thank you for joining the Starlight Society.');">
+          <input type="email" required aria-label="Email address" placeholder="Your email address"><button
+            type="submit">Join the journey</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <footer id="contact">
+    <div class="shell footer-row"><span>© 2026 Brittnay Sherrick. All rights reserved.</span>
+      <div class="footer-links"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Use</a></div>
+    </div>
+  </footer>
+</body>
+
+</html>
