@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Discover Fractured Light, Book One of The Shards of Starlight by Brittnay Sherrick.">
+    <title>Fractured Light | Brittnay Sherrick</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --ink: #282342;
+            --muted: #51485c;
+            --gold: #b18445;
+            --gold-light: #d9bd8d;
+            --paper: #fbfaf7;
+            --panel: #f7f3f0;
+            --line: #dfd6ce;
+            --display: "Cinzel", Georgia, serif;
+            --body: "Cormorant Garamond", Georgia, serif
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: var(--paper);
+            font: 16px var(--body)
+        }
+
+        a {
+            color: inherit
+        }
+
+        img {
+            display: block;
+            max-width: 100%
+        }
+
+        .shell {
+            width: min(1010px, calc(100% - 68px));
+            margin: 0 auto
+        }
+
+        .site-header {
+            position: relative;
+            z-index: 4;
+            border-bottom: 1px solid var(--line);
+            background: rgba(251, 250, 247, .96)
+        }
+
+        .nav {
+            height: 62px;
+            display: flex;
+            align-items: center;
+            gap: 34px
+        }
+
+        .wordmark {
+            color: var(--ink);
+            text-decoration: none;
+            white-space: nowrap;
+            font: 500 16px var(--display);
+            letter-spacing: .12em
+        }
+
+        .wordmark i {
+            color: var(--gold);
+            margin-right: 10px;
+            font-style: normal
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1
+        }
+
+        .nav-links a,
+        .back-link,
+        .footer-row a {
+            font: 500 10px var(--display);
+            letter-spacing: .08em;
+            text-decoration: none;
+            text-transform: uppercase
+        }
+
+        .nav-links a:hover,
+        .back-link:hover {
+            color: var(--gold)
+        }
+
+        main>.shell {
+            padding-left: 38px
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 19px 0 13px
+        }
+
+        .hero {
+            position: relative;
+            display: grid;
+            grid-template-columns: 220px 1fr 220px;
+            gap: 38px;
+            align-items: center;
+            padding: 8px 0 24px;
+            min-height: 300px
+        }
+
+        .book-cover {
+            width: 168px;
+            height: 235px;
+            margin: 0 auto;
+            position: relative;
+            border: 1px solid #cdbb9d;
+            background: linear-gradient(100deg, #d7d5cf, #fcfbf7 19%, #eeeae4);
+            box-shadow: 8px 13px 14px rgba(54, 42, 35, .16)
+        }
+
+        .book-cover:before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 16px;
+            background: linear-gradient(90deg, #aaa9a4, #f0eee8 62%, #cecac2)
+        }
+
+        .book-cover:after {
+            content: "◇";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+            font-size: 39px
+        }
+
+        .hero-copy {
+            min-width: 0
+        }
+
+        .series {
+            margin-bottom: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font: 500 11px var(--display);
+            letter-spacing: .08em
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0
+        }
+
+        h1 {
+            margin: 0 0 7px;
+            font: 500 clamp(31px, 4vw, 45px)/1.08 var(--display)
+        }
+
+        .book-number {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font: 500 11px var(--display);
+            letter-spacing: .08em
+        }
+
+        .book-number:after {
+            content: "";
+            width: 48px;
+            height: 1px;
+            background: var(--gold-light)
+        }
+
+        .quote {
+            max-width: 400px;
+            margin: 22px 0 14px;
+            font: italic 500 17px/1.38 var(--body)
+        }
+
+        .hero-copy>p:not(.quote) {
+            max-width: 430px;
+            line-height: 1.3
+        }
+
+        .status {
+            margin-top: 22px;
+            text-transform: uppercase;
+            font: 500 10px var(--display);
+            letter-spacing: .08em
+        }
+
+        .status:before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-right: 8px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            background: var(--gold-light)
+        }
+
+        .crystal {
+            width: 220px;
+            height: 270px;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 15px rgba(104, 78, 145, .2))
+        }
+
+        .section-card {
+            margin: 0 0 10px;
+            padding: 22px 40px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .34)
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 13px;
+            margin-bottom: 17px;
+            text-align: center;
+            font: 500 20px var(--display);
+            letter-spacing: .05em
+        }
+
+        .section-title:before,
+        .section-title:after {
+            content: "";
+            width: 70px;
+            height: 1px;
+            background: var(--gold-light)
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px
+        }
+
+        .about-copy p {
+            margin-bottom: 8px;
+            line-height: 1.28
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: center
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            font: 500 10px var(--display);
+            letter-spacing: .08em
+        }
+
+        .progress-label strong {
+            font-size: 22px;
+            letter-spacing: 0
+        }
+
+        .track {
+            height: 7px;
+            overflow: hidden;
+            background: #d8d0c8;
+            border-radius: 6px
+        }
+
+        .fill {
+            width: 65%;
+            height: 100%;
+            background: linear-gradient(90deg, #ad803e, #d8b66f)
+        }
+
+        .stage {
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .beta {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 17px;
+            align-items: center
+        }
+
+        .beta-crystal {
+            width: 70px;
+            height: 75px;
+            object-fit: contain
+        }
+
+        .beta h3,
+        .resource h3 {
+            margin-bottom: 5px;
+            font: 500 15px var(--display);
+            letter-spacing: .05em
+        }
+
+        .beta p,
+        .resource p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.2
+        }
+
+        .small-button {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font: 500 9px var(--display);
+            letter-spacing: .08em
+        }
+
+        .small-button.dark {
+            color: #fff;
+            background: var(--ink);
+            border-color: var(--ink)
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .resource {
+            min-height: 120px;
+            padding: 20px 28px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .34)
+        }
+
+        .resource-icon {
+            float: left;
+            width: 34px;
+            height: 34px;
+            margin: 0 13px 20px 0;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: #fff;
+            background: var(--ink);
+            font-size: 17px
+        }
+
+        .newsletter {
+            display: grid;
+            grid-template-columns: 155px 1fr 310px;
+            gap: 23px;
+            align-items: center;
+            padding: 18px 27px;
+            background: linear-gradient(105deg, #f2edf0, #f8f4f6)
+        }
+
+        .newsletter-crystal {
+            width: 105px;
+            height: 90px;
+            object-fit: contain
+        }
+
+        .newsletter h2 {
+            margin: 0 0 6px;
+            font: 500 17px var(--display);
+            letter-spacing: .04em
+        }
+
+        .newsletter p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.2
+        }
+
+        .signup {
+            display: flex
+        }
+
+        .signup input {
+            min-width: 0;
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--ink);
+            font: 14px var(--body)
+        }
+
+        .signup button {
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            padding: 0 16px;
+            text-transform: uppercase;
+            font: 500 9px var(--display);
+            letter-spacing: .08em;
+            cursor: pointer
+        }
+
+        footer {
+            position: relative;
+            z-index: 4;
+            padding: 14px 0 18px;
+            background: var(--paper);
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .footer-row {
+            display: flex;
+            justify-content: space-between
+        }
+
+        .footer-row a {
+            font-size: 9px
+        }
+
+        @media(max-width:800px) {
+            .shell {
+                width: min(100% - 34px, 620px)
+            }
+
+            main>.shell {
+                padding-left: 28px
+            }
+
+            .nav {
+                height: auto;
+                min-height: 62px;
+                gap: 15px
+            }
+
+            .wordmark {
+                font-size: 13px
+            }
+
+            .nav-links {
+                gap: 14px
+            }
+
+            .nav-links a {
+                font-size: 8px
+            }
+
+            .hero {
+                grid-template-columns: 150px 1fr;
+                gap: 22px
+            }
+
+            .crystal {
+                position: absolute;
+                right: -30px;
+                bottom: -20px;
+                opacity: .45;
+                z-index: -1
+            }
+
+            .progress-grid,
+            .about-grid {
+                grid-template-columns: 1fr
+            }
+
+            .facts {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .newsletter {
+                grid-template-columns: 90px 1fr
+            }
+
+            .newsletter .signup {
+                grid-column: 1/-1
+            }
+        }
+
+        @media(max-width:560px) {
+            main>.shell {
+                padding-left: 18px
+            }
+
+            .nav-links a:nth-child(n+3) {
+                display: none
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 8px
+            }
+
+            .book-cover {
+                margin: auto
+            }
+
+            .hero-copy>p:not(.quote),
+            .quote {
+                margin-left: auto;
+                margin-right: auto
+            }
+
+            .crystal {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                width: 180px;
+                height: 190px;
+                margin: -20px auto -15px;
+                opacity: .72;
+                z-index: 0
+            }
+
+            .section-card {
+                padding: 18px
+            }
+
+            .section-title {
+                font-size: 17px
+            }
+
+            .section-title:before,
+            .section-title:after {
+                width: 30px
+            }
+
+            .resources {
+                grid-template-columns: 1fr
+            }
+
+            .newsletter {
+                grid-template-columns: 1fr;
+                text-align: center
+            }
+
+            .newsletter-crystal {
+                margin: auto
+            }
+
+            .newsletter .signup {
+                grid-column: auto
+            }
+
+            .signup button {
+                padding: 0 11px
+            }
+
+            .footer-row {
+                flex-direction: column;
+                gap: 9px;
+                align-items: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="shell nav"><a class="wordmark" href="index.html"><i>◇</i>BRITTNAY SHERRICK</a>
+            <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a
+                    href="books.html">Books</a><a href="books.html#newsletter">Newsletter</a><a
+                    href="#about">About</a><a href="#contact">Contact</a></nav>
+        </div>
+    </header>
+    <main>
+        <div class="shell"><a class="back-link" href="books.html">← Back to Books</a>
+            <section class="hero">
+                <div class="book-cover" role="img" aria-label="Fractured Light cover placeholder"></div>
+                <div class="hero-copy">
+                    <div class="series">The Shards of Starlight</div>
+                    <h1>Fractured Light</h1>
+                    <div class="book-number">Book One</div>
+                    <p class="quote">The Starlight has left the land and chosen you instead.</p>
+                    <p>Chosen by a power that should belong to the world, Avena must decide whether returning the
+                        Starlight will save the Terranes... or destroy them.</p>
+                    <div class="status">Status: In Progress &nbsp; | &nbsp; Writing Now</div>
+                </div><img class="crystal" src="images/hero-crystal.png" alt="Starlight crystal illustration">
+            </section>
+            <section class="section-card" id="about">
+                <h2 class="section-title">About the Book</h2>
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <p><strong>The Starlight was not always broken.</strong></p>
+                        <p>For generations, its power has lived beneath Verdant, breathing magic into the land and
+                            protecting its people. But when an attack threatens to place the Light in enemy hands, Avena
+                            Valehart makes a choice born of courage and desperation.</p>
+                        <p>The Light answers by choosing her.</p>
+                        <p>With the Starlight alive beneath her skin, Avena fears and resents the power she never
+                            wanted. Verdant demands the return of its Light. The Terranes have spilled blood to possess
+                            it. And if Avena remains, she risks being imprisoned by the very people she tried to save.
+                        </p>
+                        <p>Her only path leads away from home.</p>
+                        <p>Accompanied by Lara and Ryn, the friends who refuse to let her carry this burden alone, Avena
+                            follows the Light’s pull across lands scarred by its absence. Yet she cannot escape the
+                            warning of a mysterious Vespera man surrounded by living shadows:</p>
+                        <p><em>“The Starlight has left the land and chosen you instead.<br>You will not survive
+                                it.”</em></p>
+                        <p>To restore Verdant’s fading magic and prevent the Terranes from descending into war, Avena
+                            must return the Light to the place where it first touched the world. But fractured magic
+                            offers no promise of a merciful ending. Returning the Starlight could reconnect the broken
+                            lands and restore what has been lost.</p>
+                        <p>Or it could break everything forever.</p>
+                        <p>The Starlight wants to go home.</p>
+                        <p>Avena may not survive taking it there.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section-card progress-grid">
+                <div>
+                    <div class="progress-label"><span>Manuscript Progress</span><strong>65%</strong></div>
+                    <div class="track">
+                        <div class="fill"></div>
+                    </div>
+                    <p class="stage"><strong>Current stage: First Draft</strong><br>Next: Editing → Revisions → Beta
+                        Reading</p>
+                </div>
+                <div class="beta"><img class="beta-crystal" src="images/hero-crystal.png" alt="Small crystal">
+                    <div>
+                        <h3>Apply to Become a Beta Reader</h3>
+                        <p>Join the Starlight Society for updates and early reader opportunities.</p><a
+                            class="small-button dark" href="#contact">Join the Starlight Society ✦</a>
+                    </div>
+                </div>
+            </section>
+            <section class="resources">
+                <article class="resource"><span class="resource-icon">▣</span>
+                    <h3>Sample Chapter</h3>
+                    <p>Read a sample chapter when it becomes available.</p><a class="small-button" href="#contact">Read
+                        when available</a>
+                </article>
+                <article class="resource"><span class="resource-icon">▱</span>
+                    <h3>Retailers &amp; Pre-Order</h3>
+                    <p>Pre-order links will appear here when available.</p><button class="small-button" type="button"
+                        disabled>Pre-order coming soon</button>
+                </article>
+            </section>
+            <section class="section-card newsletter" id="contact"><img class="newsletter-crystal"
+                    src="images/hero-crystal.png" alt="Starlight crystal">
+                <div>
+                    <h2>Join the Starlight Society</h2>
+                    <p>Be the first to receive book updates, exclusive content, worldbuilding notes, character art, and
+                        early previews.</p>
+                </div>
+                <form class="signup"
+                    onsubmit="event.preventDefault(); alert('Thank you for joining the Starlight Society.');"><input
+                        type="email" required aria-label="Email address" placeholder="Your email address"><button
+                        type="submit">Join the journey ✦</button></form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="shell footer-row"><span>© 2026 Brittnay Sherrick. All rights reserved.</span><a
+                href="books.html">Terms of Use</a></div>
+    </footer>
+</body>
+
+</html>
