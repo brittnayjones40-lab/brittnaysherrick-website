@@ -709,12 +709,22 @@
     }
 
     @media (max-width: 560px) {
-      .nav-links {
-        justify-content: flex-end;
+      .nav {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 56px;
+        gap: 8px;
+        padding: 10px 0 0;
       }
 
-      .nav-links a:nth-child(n+3) {
-        display: none;
+      .nav-links {
+        flex-basis: 100%;
+        justify-content: space-around;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        padding-bottom: 10px;
       }
 
       .intro-inner {
@@ -728,11 +738,24 @@
       }
 
       .featured {
-        grid-template-columns: 1fr;
+        grid-template-columns: 46px 105px 46px;
+        justify-content: center;
+        align-items: center;
         text-align: center;
       }
 
+      .featured-number {
+        position: static;
+        justify-self: center;
+        transform: none;
+      }
+
+      .featured>div:nth-child(3) {
+        grid-column: 1 / -1;
+      }
+
       .book-cover {
+        grid-column: 2;
         margin: 0 auto;
         transform: none;
       }
@@ -802,7 +825,7 @@
     <div class="shell nav">
       <a class="wordmark" href="index.html" aria-label="Brittnay Sherrick home"><i>◇</i>BRITTNAY SHERRICK</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="#books" aria-current="page">Books</a><a href="#about">About</a>
+        <a href="index.html">Home</a><a href="#books" aria-current="page">Books</a><a href="about.html">About</a>
       </nav>
     </div>
   </header>
@@ -812,7 +835,8 @@
         <div class="intro-copy">
           <h1>Books</h1>
           <div class="rule"></div>
-          <p>Five Terranes connected by starlight, destiny,<br>and the courage to choose what is right.</p>
+          <p>Five Terranes connected by <strong>Starlight</strong>, destiny,<br>and the courage to choose what is right.
+          </p>
         </div><img class="intro-crystal" src="images/hero-crystal.png" alt="A glowing starlight crystal">
       </div>
     </section>

@@ -694,7 +694,12 @@
             }
 
             main>.shell {
-                padding-left: 28px
+                padding-left: 50px
+            }
+
+            .page-vine {
+                width: 42px;
+                background-size: 40px auto
             }
 
             .nav {
@@ -748,11 +753,28 @@
 
         @media(max-width:560px) {
             main>.shell {
-                padding-left: 18px
+                padding-left: 40px
             }
 
-            .nav-links a:nth-child(n+3) {
-                display: none
+            .page-vine {
+                width: 32px;
+                background-size: 30px auto
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 10px 0 0
+            }
+
+            .nav-links {
+                flex-basis: 100%;
+                justify-content: space-around;
+                gap: 10px
+            }
+
+            .nav-links a {
+                padding-bottom: 10px
             }
 
             .hero {
@@ -830,7 +852,7 @@
     <header class="site-header">
         <div class="shell nav"><a class="wordmark" href="index.html"><i>◇</i>BRITTNAY SHERRICK</a>
             <nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="books.html"
-                    aria-current="page">Books</a><a href="#about">About</a></nav>
+                    aria-current="page">Books</a><a href="about.html">About</a></nav>
         </div>
     </header>
     <main>
