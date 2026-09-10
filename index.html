@@ -280,6 +280,8 @@
       display: block;
       width: min(400px, 82%);
       max-height: 350px;
+      /* artwork's crystal is off-center within the image; nudge to visually center it */
+      margin-left: 7%;
       object-fit: contain;
       filter:
         drop-shadow(0 0 18px rgba(110, 145, 255, 0.55)) drop-shadow(0 0 42px rgba(143, 104, 230, 0.38)) drop-shadow(0 0 65px rgba(230, 188, 105, 0.18));
@@ -703,12 +705,12 @@
     }
 
     .portrait-frame {
-      min-height: 200px;
-      align-self: end;
-      border: 1px solid rgba(216, 180, 104, .7);
-      border-radius: 160px 160px 0 0;
-      background: #161025 url("images/brittnay-photo.png") center 22%/cover no-repeat;
-      box-shadow: 0 0 55px rgba(105, 75, 168, .28);
+      width: 100%;
+      aspect-ratio: .97;
+      align-self: center;
+      border-radius: 12px;
+      background: url("images/brittnay-photo.png") center/cover no-repeat;
+      box-shadow: 0 0 70px rgba(120, 88, 195, .55), 0 0 140px rgba(105, 75, 168, .35);
       position: relative;
     }
 
@@ -752,7 +754,11 @@
 
     @media (max-width:900px) {
       .nav-links {
-        display: none;
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
       }
 
       .hero {
@@ -794,7 +800,17 @@
 
     @media (max-width:600px) {
       .nav {
-        height: 70px;
+        height: auto;
+        min-height: 60px;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        flex-basis: 100%;
+        justify-content: space-around;
+        gap: 10px;
       }
 
       .wordmark {
@@ -824,7 +840,6 @@
       }
 
       .portrait-frame {
-        min-height: 260px;
         width: min(340px, 100%);
         order: -1;
       }
@@ -868,7 +883,7 @@
     <div class="shell nav">
       <div class="wordmark-mark" aria-hidden="true">◇</div>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="books.html">Books</a><a href="#about">About</a>
+        <a href="#home">Home</a><a href="books.html">Books</a><a href="about.html">About</a>
       </nav>
     </div>
   </header>
@@ -988,7 +1003,7 @@
             <div class="section-label">Meet Brittnay</div>
             <h2>Writer. Dreamer. Believer.</h2>
             <p>Creating hopeful epic fantasy about friendship, love, destiny, and the choices that reveal who we are.
-            </p><a class="text-link" href="#">Read my story</a>
+            </p><a class="text-link" href="about.html">Read my story</a>
           </div>
           <div class="portrait-frame" role="img" aria-label="Portrait of Brittnay with books"></div>
         </article>
